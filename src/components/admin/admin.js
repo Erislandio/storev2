@@ -1,11 +1,16 @@
-import React, { useEffect } from "react";
+import React from "react";
 import {
   BrowserRouter as Router,
   Switch,
   Route,
   Redirect
 } from "react-router-dom";
+import { Header } from "./header/header";
 
 export const Admin = () => {
-  return <div>admin</div>;
+  return (
+    <div id="adimin">
+      <Header />
+    </div>
+  );
 };

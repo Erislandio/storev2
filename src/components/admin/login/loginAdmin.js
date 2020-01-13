@@ -3,6 +3,7 @@ import { login as LOGIN } from "../../graphql/mutation/login";
 import { useMutation } from "@apollo/react-hooks";
 import cookie from "js-cookie";
 import { useToasts } from "react-toast-notifications";
+import { Container } from "../../container/container";
 import "./login.css";
 
 export const LoginAdmin = () => {
@@ -80,30 +81,32 @@ export const LoginAdmin = () => {
   };
 
   return (
-    <div id="login-form" className="login">
-      <div className="form-container">
-        <h2>Login</h2>
-        <form onSubmit={handleSubmit}>
-          {fields.map((field, index) => {
-            return (
-              <div key={index} className="input-container">
-                <input
-                  name={field}
-                  type={inputType(field)}
-                  placeholder={inputType(field)}
-                  onChange={handleChange}
-                  className="input"
-                  value={user[field]}
-                  required
-                />
-              </div>
-            );
-          })}
-          <button disabled={loading} type="submit">
-            Entrar
-          </button>
-        </form>
+    <Container>
+      <div id="login-form" className="login">
+        <div className="form-container">
+          <h2>Login</h2>
+          <form onSubmit={handleSubmit}>
+            {fields.map((field, index) => {
+              return (
+                <div key={index} className="input-container">
+                  <input
+                    name={field}
+                    type={inputType(field)}
+                    placeholder={inputType(field)}
+                    onChange={handleChange}
+                    className="input"
+                    value={user[field]}
+                    required
+                  />
+                </div>
+              );
+            })}
+            <button disabled={loading} type="submit">
+              Entrar
+            </button>
+          </form>
+        </div>
       </div>
-    </div>
+    </Container>
   );
 };
