@@ -5,6 +5,7 @@ const login = gql`
     signinUser(email: { email: $email, password: $password }) {
       token
       user {
+        admin
         document
         email
         id

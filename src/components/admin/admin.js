@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import {
   BrowserRouter as Router,
   Switch,
@@ -7,11 +7,5 @@ import {
 } from "react-router-dom";
 
 export const Admin = () => {
-  const token = null;
-
-  return (
-    <Router>
-      <Switch>{!token && <Redirect to="/admin/login" />}</Switch>
-    </Router>
-  );
+  return <div>admin</div>;
 };
